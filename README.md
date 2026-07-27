@@ -1,6 +1,6 @@
 # turn-arbiter
 
-> **Scope:** this document covers only the publishable npm package. The site that consumes it — storage, endpoints, board UI — is specified separately in the Fog Chess feature plan. Keep this file in the `fog-arbiter` repo.
+> **Scope:** this document covers only the publishable npm package. The site that consumes it — storage, endpoints, board UI — is specified separately in the Fog Chess feature plan. Keep this file in the `turn-arbiter` repo.
 
 ## 1. What this package is
 
@@ -177,7 +177,7 @@ export type Rules<P, M> = {
 Shipped on the `./chess` subpath, roughly thirty lines wrapping `chess.js`. `chess.js` is an **optional peer dependency**, so the core install stays at zero dependencies and only consumers importing this subpath need it.
 
 ```tsx
-import { chessRules } from "@samananias/fog-arbiter/chess";
+import { chessRules } from "@samananias/turn-arbiter/chess";
 ```
 
 ## 4. Serialized state is public API
@@ -236,7 +236,7 @@ A separate, smaller suite covers the chess adapter: a full recorded game replays
 ## 7. Repository layout
 
 ```jsx
-fog-arbiter/
+turn-arbiter/
   src/
     index.ts        // public exports
     arbiter.ts      // createArbiter
@@ -257,7 +257,7 @@ fog-arbiter/
 
 ```json
 {
-  "name": "@samananias/fog-arbiter",
+  "name": "@samananias/turn-arbiter",
   "version": "0.1.0",
   "type": "module",
   "sideEffects": false,
@@ -301,11 +301,11 @@ You do not need an npm account to use this. Point the portfolio at the folder on
 
 ```json
 "dependencies": {
-  "@samananias/fog-arbiter": "file:../fog-arbiter"
+  "@samananias/turn-arbiter": "file:../turn-arbiter"
 }
 ```
 
-Imports then behave exactly as they would from the registry. Build the whole feature this way; publishing later is a one-line change from `file:../fog-arbiter` to `^0.1.0`, with no code change.
+Imports then behave exactly as they would from the registry. Build the whole feature this way; publishing later is a one-line change from `file:../turn-arbiter` to `^0.1.0`, with no code change.
 
 ## 10. Publishing
 
@@ -331,7 +331,7 @@ Phases 0 through 2 need no database, no hosting account, and no npm account.
 
 ## 12. Open question
 
-**Name.** `fog-arbiter` describes the core honestly and leaves room for non-chess adapters. `fog-chess` is more memorable but misdescribes a package whose core has no chess in it. This is worth settling before phase 0, because the npm name is permanent once published.
+**Name.** Settled as `turn-arbiter` (`@samananias/turn-arbiter`). This describes the core honestly and leaves room for non-chess adapters.
 
 ## 13. Prior art
 
