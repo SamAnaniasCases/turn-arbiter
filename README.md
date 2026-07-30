@@ -1,4 +1,4 @@
-# @samananias/turn-arbiter
+# turn-arbiter
 
 A pure computation turn arbiter for asynchronous, anonymous, two-sided games (e.g. crowd chess, race-condition turn games).
 
@@ -14,13 +14,13 @@ It answers one single question: ***Is this session permitted to act right now, a
 ## Installation
 
 ```bash
-npm install @samananias/turn-arbiter
+npm install turn-arbiter
 ```
 
 Or for local development:
 ```json
 "dependencies": {
-  "@samananias/turn-arbiter": "file:../turn-arbiter"
+  "turn-arbiter": "file:../turn-arbiter"
 }
 ```
 
@@ -29,8 +29,8 @@ Or for local development:
 ## Quickstart (Chess Example)
 
 ```typescript
-import { createArbiter } from "@samananias/turn-arbiter";
-import { chessRules } from "@samananias/turn-arbiter/chess";
+import { createArbiter } from "turn-arbiter";
+import { chessRules } from "turn-arbiter/chess";
 
 // Initialize arbiter (new game or restored from DB)
 const arbiter = createArbiter({
@@ -86,7 +86,7 @@ Creates an arbiter instance.
 To use `turn-arbiter` with custom games (e.g. Checkers, Connect Four, Go), implement the `Rules` interface:
 
 ```typescript
-import type { Rules } from "@samananias/turn-arbiter";
+import type { Rules } from "turn-arbiter";
 
 export const customRules: Rules<MyPosition, MyMove> = {
   initial() {

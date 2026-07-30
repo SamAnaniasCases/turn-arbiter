@@ -1,5 +1,5 @@
 {
-  "name": "@samananias/turn-arbiter",
+  "name": "turn-arbiter",
   "version": "0.1.0",
   "type": "module",
   "sideEffects": false,
@@ -32,7 +32,8 @@
     "build": "tsc",
     "test": "vitest run",
     "lint": "eslint .",
-    "check": "tsc --noEmit && publint"
+    "check": "tsc --noEmit && publint",
+    "prepublishOnly": "npm run check && npm run build"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.17.3",
